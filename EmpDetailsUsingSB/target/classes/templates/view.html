@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Employee details</title>
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<!-- Font Icon -->
+    	<link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    	<!-- Main css -->
+    	<link rel="stylesheet" href="css/style.css">
+		<meta name="robots" content="noindex, follow">
+		
+		<!-- JS -->
+	    <script src="js/jquery.min.js"></script>
+	    <script src="js/main.js"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		
+		  gtag('config', 'UA-23581568-13');
+		</script>
+		<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"65d9625d1d50c92c","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.5.2","si":10}'></script>
+		
+	</head>
+	
+	<body>
+	<div class="header">
+  		<a href="#default" class="logo">WICORE LABS</a>
+  			<div class="header-right">
+    
+    			<div class="dropdown">
+  <img src="css/signup-bg.jpg" class="dropbtn">
+  <div class="dropdown-content">
+    <a href="#">msg</a>
+    <p style="margin-left:0.5em"><a href="#">logout</a></p><br>
+   <a href="#">change password</a>
+  </div>
+</div>
+  			</div>
+	</div>
+		<div class="main">
+
+      
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container1">
+                <div class="signup-content">
+                    <form method="POST" id="signup-form" class="signup-form" action = "logout.jsp">
+                        <h2 class="form-title">Employee Details</h2>
+						<label for="agree-term" class="label-agree-term text-align"> <a th:href="@{'/addnew'}">
+						<span class="glyphicon glyphicon-plus-sign"></span>
+						ADD NEW
+						</a>
+						</label>
+						
+                        
+		
+ 			
+			
+      
+       				<div class="form-group">
+        			<table class="rtable" border=1 width=10% height=10% align="center">
+        			  <thead>
+        			      	<tr>
+        					<th>emp_id</th>
+        					<th>firstName</th>
+        					<th>LastName</th>
+        					<th>Gender</th>
+        					<th>PhoneNumber</th>
+        					<th>Email</th>
+        					<th>State</th>
+        					<th>Address</th>
+        					<th>Employeedesignation</th>
+        					<th>Edit</th>
+        					<th>delete</th>
+        					
+        					
+        				</tr>
+        				</thead>
+        				
+        				
+         				
+         				<tbody>
+         				<tr  th:each="employee : ${listemployee}">
+							<td th:text="${employee.emp_id}">emp_id</td>
+							<td th:text="${employee.firstname}">firstname</td>
+							<td th:text="${employee.lastname}">lastname</td>
+							<td th:text="${employee.gender}">gender</td>
+							<td th:text="${employee.phone_no}">phone_no</td>
+							<td th:text="${employee.email}">email</td>
+							<td th:text="${employee.state}">state</td>
+							<td th:text="${employee.Address}">Address</td>
+							<td th:text="${employee.empdes}">empdes</td>				
+							<td>
+								<a th:href="@{'/edit/' + ${employee.emp_id}}">Edit</a>
+							</td>							    
+							<td>
+								<a th:href="@{'/delete/' + ${employee.emp_id}}">Delete</a>
+							</td>		    
+							</tr> 
+
+          		</tbody>
+          			</table>
+          			</div>
+          			
+                    </form>
+				</div>
+				</div>
+
+        </div>         		
+	
+	</body>
+</html>

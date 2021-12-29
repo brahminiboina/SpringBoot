@@ -1,0 +1,5 @@
+com\wicore\SBPro\StudentService.class
+com\wicore\SBPro\SbProApplication.class
+com\wicore\SBPro\Student.class
+com\wicore\SBPro\StudentRepository.class
+com\wicore\SBPro\StudentController.class
